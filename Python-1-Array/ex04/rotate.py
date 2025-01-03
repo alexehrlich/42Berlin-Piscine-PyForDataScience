@@ -8,6 +8,8 @@ def rgb2gray(rgb: np.ndarray) -> np.ndarray:
     """
     return (0.2989 * rgb[:, :, 0] + 0.5870 * rgb[:, :, 1] + 0.1140 * rgb[:, :, 2]).astype(int)
 
+def transp(img: np.ndarray) -> np.ndarray:
+    return [[row[i] for row in img] for i in range(len(img[0]))]
 
 def main():
     try:
@@ -19,7 +21,10 @@ def main():
         gray = rgb2gray(zoomed)
         print(f"The shape of the zoomed, gray image: {gray.shape}")
         print(gray)
-        plt.imshow(gray, cmap='gray')
+        rotated = transp(gray)
+        print(f"The shape of the rotated, gray image: {gray.shape}")
+        #print(rotated)
+        plt.imshow(rotated, cmap='gray')
         plt.show()
     except Exception as e:
         print(e)
