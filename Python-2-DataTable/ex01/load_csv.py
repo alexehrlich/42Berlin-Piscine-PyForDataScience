@@ -1,7 +1,8 @@
 import pandas as pd
 import os
 
-def load(path: str)->pd.DataFrame:
+
+def load(path: str) -> pd.DataFrame:
     """reads the csv file into a DaaFrame"""
     if not os.path.exists(path):
         print(f"Path: {path} does not exist.")
