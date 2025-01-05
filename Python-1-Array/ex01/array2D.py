@@ -2,6 +2,7 @@ import numpy as np
 
 
 def slice_me(family: list, start: int, end: int):
+    """Generates a sublist unsing list comprehensions."""
     if (not isinstance(family, list) or not
             isinstance(start, int) or not isinstance(end, int)):
         raise ValueError(f"""Wrong argument types: <list, int, int>.
