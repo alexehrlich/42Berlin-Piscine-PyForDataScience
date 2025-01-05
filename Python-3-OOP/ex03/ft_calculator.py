@@ -17,5 +17,7 @@ class calculator:
         print(self.vec)
 
     def __truediv__(self, object) -> None:
+        if object == 0.0:
+            raise ValueError("Cannot divide by 0.")
         self.vec = [x / object for x in self.vec]
         print(self.vec)
