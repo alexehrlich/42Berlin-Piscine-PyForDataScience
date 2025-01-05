@@ -2,6 +2,7 @@ import array
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def ft_invert(array) -> array:
     """Inverts the color of the image received."""
     np_img = np.array(array)
@@ -10,11 +11,11 @@ def ft_invert(array) -> array:
     plt.show()
     return inverted
 
+
 def ft_red(array) -> array:
     """
     Turns of the blue and green channel of the image received.
     """
-    np_img = np.array(array)
     red = array[:, :, 0]
     green = np.zeros_like(red)
     blue = np.zeros_like(red)
@@ -23,11 +24,11 @@ def ft_red(array) -> array:
     plt.show()
     return red_rgb
 
+
 def ft_green(array) -> array:
     """
     Turns of the blue and red channel of the image received.
     """
-    np_img = np.array(array)
     green = array[:, :, 1]
     red = np.zeros_like(green)
     blue = np.zeros_like(green)
@@ -36,11 +37,11 @@ def ft_green(array) -> array:
     plt.show()
     return green_rgb
 
+
 def ft_blue(array) -> array:
     """
     Turns of the red and green channel of the image received.
     """
-    np_img = np.array(array)
     blue = array[:, :, 2]
     red = np.zeros_like(blue)
     green = np.zeros_like(blue)
@@ -49,11 +50,14 @@ def ft_blue(array) -> array:
     plt.show()
     return blue_rgb
 
+
 def ft_grey(array) -> array:
     """
     Converts an RGB image to grayscale using the luminosity method.
     """
-    gray =  (0.2989 * array[:, :, 0] + 0.5870 * array[:, :, 1] + 0.1140 * array[:, :, 2]).astype(int)
+    gray = (0.2989 * array[:, :, 0] +
+            0.5870 * array[:, :, 1] +
+            0.1140 * array[:, :, 2]).astype(int)
     plt.imshow(gray, cmap='grey')
     plt.show()
     return gray
