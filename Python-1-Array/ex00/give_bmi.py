@@ -1,6 +1,7 @@
 def give_bmi(height: list[int | float],
              weight: list[int | float]
              ) -> list[int | float]:
+    """Calculates the bmi and for several height weight pairs."""
     if (all(isinstance(h, int) for h in height) and
             all(isinstance(w, int) for w in weight)):
         is_int = True
@@ -22,6 +23,7 @@ def give_bmi(height: list[int | float],
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """Check if the list contains limit exeeding bmis"""
     if all(isinstance(value, (int, float)) for value in bmi):
         return [True if item > limit else False for item in bmi]
     else:
