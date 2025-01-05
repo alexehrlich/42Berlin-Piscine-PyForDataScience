@@ -15,4 +15,3 @@ def load(path: str) -> pd.DataFrame:
         return
     else:
         return pd.read_csv(path, index_col=0, header=0)
-   

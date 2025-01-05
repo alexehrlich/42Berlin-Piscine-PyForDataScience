@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from load_csv import load
 import numpy as np
 
+
 def main():
     """Plots the life expectnacy of a country"""
     df = load('life_expectancy_years.csv')
@@ -13,6 +14,7 @@ def main():
     plt.title("Life expectancy over Years: Germany")
     plt.legend()
     plt.show()
+
 
 if __name__ == "__main__":
     main()
